@@ -10,7 +10,8 @@
     <title>Project 2</title>
 </head>
 <body>
-    <div class="navbar-fixed"> 
+    <div class="navbar-fixed">
+        <nav>
           <div class="nav-wrapper">
             <a href="" class="brand-logo left">Welcome! please log in</a>
             <ul class="right">
@@ -18,26 +19,22 @@
                 <% if (user) { %>
                   <a href="/logout">Log Out</a>
                 <% } else { %>
-                  <a href="/auth/google"> Login</a>
+                  <a href="/auth/google"> Login with Google</a>
                 <% } %>       
               </li>
             </ul>
           </div>
+        </nav>
       </div>
       <nav>
         <div class="navbar" id="nav">
           <a href="/index">HOME</a>
-          <a href="/shop">Shop</a>
+          <a href="/burger">Burger</a>
+          <a href="/fries">Fries</a>
+          <a href="/soda">Soda</a>
           <a href="/payment">Cart</a>
           <div class="animation start-home"></div>
         </div>
       </nav>
-  <div class="menu">
-      <ul>
-        <li>Burger<img src="https://monkeyburgerrestaurant.com/wp-content/uploads/Main_burger.jpg" alt=""></li>
-        <li>Fries<img src="https://www.thespruceeats.com/thmb/tXRCQhaBACOilf8tnzLhaW0uzbE=/3485x1960/smart/filters:no_upscale()/how-to-make-homemade-french-fries-2215971-hero-01-02f62a016f3e4aa4b41d0c27539885c3.jpg" alt=""></li>
-        <li>Soda<img src="https://www.verywellfit.com/thmb/LG9T18DHEaASLrogiZYC-a4PxlA=/3000x1687/smart/filters:no_upscale()/soda-crop-828a8c10e1ff44248b1533535df4886c.jpg" alt=""></li>
-      </ul>
-    </div>
 </body>
 </html>

@@ -10,22 +10,15 @@
     <title>Project 2</title>
 </head>
 <body>
-    <div class="navbar-fixed">
-        
+  <a href="" class="brand-logo left"></a>
           <div class="nav-wrapper">
-            <a href="" class="brand-logo left">Welcome! please log in</a>
-            <ul class="right">
-              <li>
                 <% if (user) { %>
                   <a href="/logout">Log Out</a>
                 <% } else { %>
                   <a href="/auth/google"> Login with Google</a>
                 <% } %>       
-              </li>
-            </ul>
           </div>
-        
-      </div>
+     
       <nav>
       <div class="navbar" id="nav">
         <a href="/index">HOME</a>

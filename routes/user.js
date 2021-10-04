@@ -15,7 +15,4 @@ function isLoggedIn(req, res, next) {
 	if ( req.isAuthenticated() ) return next(); // next() go to the next function in middleware
 	res.redirect('/auth/google');
 }
-
-
-
 module.exports = router;
