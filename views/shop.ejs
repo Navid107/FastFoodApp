@@ -1,43 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
-    <link rel="stylesheet" href="stylesheets/style.css"/>
-  
-    <title>Project 2</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+  <link rel="stylesheet" href="stylesheets/style.css" />
+
+  <title>Project 2</title>
 </head>
+
 <body>
-    <div class="navbar-fixed"> 
-          <div class="nav-wrapper">
-            <a href="" class="brand-logo left">Welcome! please log in</a>
-            <ul class="right">
-              <li>
-                <% if (user) { %>
-                  <a href="/logout">Log Out</a>
-                <% } else { %>
-                  <a href="/auth/google"> Login</a>
-                <% } %>       
-              </li>
-            </ul>
+  <br>
+  <br>
+  <br>
+  <h1>Welcome to Dutch Burgers</h1>
+      <a href="" class="brand-logo left"></a>
+  
+  <nav>
+    <div class="navbar" id="nav">
+      <a href="/index">HOME</a>
+      <a href="/shop">Menu</a>
+      <a href="/payment">Cart</a>
+      <% if (user) { %>
+        <a href="/logout">Log Out</a>
+        <% } else { %>
+          <a href="/auth/google"> Login</a>
+          <% } %>
+      <div class="animation start-home"></div>
+    </div>
+  </nav>
+  <br>
+  
+  <div class="container">
+    <div class="menu">
+      <div class="item">
+        <img class="item-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBKKB9oMfqOovzgqR0B7ws7aOiJtvhpHOqDw&usqp=CAU"
+          alt="">
+        <div class="item-body">
+          <div class="item-name">Burger</div>
+          <div class="item-price">$12.00</div>
+        <div class="option">
+          <select name="amount" id="amount">
+            <option value="one">1</option>
+            <option value="two">2</option>
+            <option value="three">3</option>
+            <option value="four">4</option>
+            <option value="five">5</option>
+          </select>
+          <form action="/add-burger" accept-charset="UTF-8" method="POST"></form>
+            <input type="submit" name="burger" value="Select" class="select" method="POST">
+        </div>
+          
+        </div>
+      </div>
+      <div class="item">
+        <img class="item-image" src="https://www.dinneratthezoo.com/wp-content/uploads/2019/12/homemade-french-fries-5.jpg"
+        alt="">
+          <div class="item-body">
+            <div class="item-name">Fries</div>
+            <div class="item-price">$6.00</div>
+            <div class="option">
+            <select name="amount" id="amount">
+              <option value="one">1</option>
+              <option value="two">2</option>
+              <option value="three">3</option>
+              <option value="four">4</option>
+              <option value="five">5</option>
+            </select>
+            <form action="/add-burger" accept-charset="UTF-8" method="POST"></form>
+            <input type="submit" name="burger" value="Select" class="select" method="POST">
+          </div>
+       
           </div>
       </div>
-      <nav>
-        <div class="navbar" id="nav">
-          <a href="/index">HOME</a>
-          <a href="/shop">Shop</a>
-          <a href="/payment">Cart</a>
-          <div class="animation start-home"></div>
+      <div class="item">
+        <img class="item-image"
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJakCTotE3MUEhhRyocmu451QEVrRNwz3_Tw&usqp=CAU" alt="">
+        <div class="item-body">
+          <div class="item-name">Soda</div>
+          <div class="item-price">$2.00</div>
+          <div class="option">
+          <select name="amount" id="amount">
+            <option value="one">1</option>
+            <option value="two">2</option>
+            <option value="three">3</option>
+            <option value="four">4</option>
+            <option value="five">5</option>
+          </select>
+          <form action="/add-burger" accept-charset="UTF-8" method="POST"></form>
+            <input type="submit" name="burger" value="Select" class="select" method="POST">
         </div>
-      </nav>
-  <div class="menu">
-      <ul>
-        <img src="https://monkeyburgerrestaurant.com/wp-content/uploads/Main_burger.jpg" alt="">
-        <img src="https://www.thespruceeats.com/thmb/tXRCQhaBACOilf8tnzLhaW0uzbE=/3485x1960/smart/filters:no_upscale()/how-to-make-homemade-french-fries-2215971-hero-01-02f62a016f3e4aa4b41d0c27539885c3.jpg" alt="">
-        <img src="https://www.verywellfit.com/thmb/LG9T18DHEaASLrogiZYC-a4PxlA=/3000x1687/smart/filters:no_upscale()/soda-crop-828a8c10e1ff44248b1533535df4886c.jpg" alt="">
-      </ul>
+        </div>
+      </div>
     </div>
+  </div>
+  
+  </div>
 </body>
+
 </html>

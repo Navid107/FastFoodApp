@@ -10,22 +10,23 @@
     <title>Project 2</title>
 </head>
 <body>
+  <br>
+  <br>
+  <br>
+  <h1>Welcome to Dutch Burgers</h1>
   <a href="" class="brand-logo left"></a>
-          <div class="nav-wrapper">
-                <% if (user) { %>
-                  <a href="/logout">Log Out</a>
+          <nav>
+            <div class="navbar" id="nav">
+              <a href="/index">HOME</a>
+              <a href="/shop">Menu</a>
+              <a href="/payment">Cart</a>
+              <% if (user) { %>
+                <a href="/logout">Log Out</a>
                 <% } else { %>
-                  <a href="/auth/google"> Login with Google</a>
-                <% } %>       
-          </div>
-     
-      <nav>
-      <div class="navbar" id="nav">
-        <a href="/index">HOME</a>
-        <a href="/shop">Shop</a>
-        <a href="/payment">Cart</a>
-        <div class="animation start-home"></div>
-      </div>
-    </nav>
+                  <a href="/auth/google"> Login</a>
+                  <% } %>
+              <div class="animation start-home"></div>
+            </div>
+          </nav>
 </body>
 </html>

@@ -1,4 +1,5 @@
 const User = require('../models/user');
+const Food = require('../models/food')
 
 module.exports = {
   index,

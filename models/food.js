@@ -6,7 +6,6 @@ const reviewSchema = new mongoose.Schema({
      user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
    })
  
- 
  const orderSchema = new mongoose.Schema({
     burgerValue: Number,
     friesValue: Number,
