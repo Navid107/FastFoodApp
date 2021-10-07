@@ -1,17 +1,52 @@
 const User = require('../models/user');
-const Food = require('../models/food')
+const Food = require('../models/food');
+const { Forbidden } = require('http-errors');
 
 module.exports = {
   index,
   review,
   shop,
-  payment
+  payment,
+  removeItem,
+  createOrder
+  
 };
+function createOrder(req, res){
+  console.log(req.body)
+  req.body.user = req.user._id;
+  let newOrder = new Food(req.body)
+  console.log(newOrder, "new Order")
+  newOrder.save(function (e){
+    res.redirect('/payment')
+  })
+}
 
-function payment(req, res){
+function removeItem(req, res){
   res.render('payment',{
 
   })
+}
+function payment(req, res){
+  Food.find({user: req.user._id}, function(err, orders){
+    console.log(orders, "This is the orders");
+  
+    let burgers = orders.reduce(function(a,e){
+      a += e.burgerValue;
+      return a;
+    },0)
+    let fries = orders.reduce(function(a,e){
+      a += e.friesValue;
+      return a;
+    },0)
+    let soda = orders.reduce(function(a,e){
+      a += e.sodaValue;
+      console.log(a, "this is soda")
+      return a;
+    },0)
+  res.render('payment',{
+    orders,burgers, fries, soda
+  })
+})
 }
 
 function shop(req, res){

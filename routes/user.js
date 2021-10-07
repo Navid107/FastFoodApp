@@ -1,14 +1,16 @@
 var router = require('express').Router();
+const { route } = require('.');
 var userCtrl = require('../controllers/user');
 
-// GET /students
+
 router.get('/index', userCtrl.index);
 router.get('/shop', userCtrl.shop);
-router.get('/payment', userCtrl.payment);
+router.get('/payment',isLoggedIn, userCtrl.payment);
 router.post('/index', isLoggedIn, userCtrl.review);
-// Authorizing the user to use a route
-// probably only want to use this on
-// post, put or delete routes
+// router.post('/shop', isLoggedIn, userCtrl.order);
+router.delete('/payment',isLoggedIn, userCtrl.removeItem);
+router.post('/createOrder',isLoggedIn, userCtrl.createOrder);
+
 function isLoggedIn(req, res, next) {
 	// req.isAuthenticated() this is given to us by passport
 	// it returns true or false

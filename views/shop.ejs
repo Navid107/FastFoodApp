@@ -16,8 +16,8 @@
   <br>
   <br>
   <h1>Welcome to Dutch Burgers</h1>
-      <a href="" class="brand-logo left"></a>
-  
+  <a href="" class="brand-logo left"></a>
+
   <nav>
     <div class="navbar" id="nav">
       <a href="/index">HOME</a>
@@ -28,75 +28,57 @@
         <% } else { %>
           <a href="/auth/google"> Login</a>
           <% } %>
-      <div class="animation start-home"></div>
+            <div class="animation start-home"></div>
     </div>
   </nav>
   <br>
-  
-  <div class="container">
-    <div class="menu">
-      <div class="item">
-        <img class="item-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBKKB9oMfqOovzgqR0B7ws7aOiJtvhpHOqDw&usqp=CAU"
-          alt="">
-        <div class="item-body">
-          <div class="item-name">Burger</div>
-          <div class="item-price">$12.00</div>
-        <div class="option">
-          <select name="amount" id="amount">
-            <option value="one">1</option>
-            <option value="two">2</option>
-            <option value="three">3</option>
-            <option value="four">4</option>
-            <option value="five">5</option>
-          </select>
-          <form action="/add-burger" accept-charset="UTF-8" method="POST"></form>
-            <input type="submit" name="burger" value="Select" class="select" method="POST">
+  <form action="/createOrder" method="POST">
+    <div class="container">
+      <div class="menu">
+        <div class="item">
+          <img class="item-image"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBKKB9oMfqOovzgqR0B7ws7aOiJtvhpHOqDw&usqp=CAU"
+            alt="">
+          <div class="item-body">
+            <div class="item-name">Burger</div>
+            <div class="item-price">$12.00</div>
+            <div class="option">
+              <label for="burgerValue">Please enter the amount</label>
+              <input type="number" id="burger-value" name="burgerValue" min="0">
+
+            </div>
+          </div>
         </div>
-          
-        </div>
-      </div>
-      <div class="item">
-        <img class="item-image" src="https://www.dinneratthezoo.com/wp-content/uploads/2019/12/homemade-french-fries-5.jpg"
-        alt="">
+        <div class="item">
+          <img class="item-image"
+            src="https://www.dinneratthezoo.com/wp-content/uploads/2019/12/homemade-french-fries-5.jpg" alt="">
           <div class="item-body">
             <div class="item-name">Fries</div>
             <div class="item-price">$6.00</div>
             <div class="option">
-            <select name="amount" id="amount">
-              <option value="one">1</option>
-              <option value="two">2</option>
-              <option value="three">3</option>
-              <option value="four">4</option>
-              <option value="five">5</option>
-            </select>
-            <form action="/add-burger" accept-charset="UTF-8" method="POST"></form>
-            <input type="submit" name="burger" value="Select" class="select" method="POST">
+              <label for="friesValue">please enter the amount</label>
+              <input type="number" id="fries-value" name="friesValue" min="0">
+            </div>
+
           </div>
-       
-          </div>
-      </div>
-      <div class="item">
-        <img class="item-image"
-    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJakCTotE3MUEhhRyocmu451QEVrRNwz3_Tw&usqp=CAU" alt="">
-        <div class="item-body">
-          <div class="item-name">Soda</div>
-          <div class="item-price">$2.00</div>
-          <div class="option">
-          <select name="amount" id="amount">
-            <option value="one">1</option>
-            <option value="two">2</option>
-            <option value="three">3</option>
-            <option value="four">4</option>
-            <option value="five">5</option>
-          </select>
-          <form action="/add-burger" accept-charset="UTF-8" method="POST"></form>
-            <input type="submit" name="burger" value="Select" class="select" method="POST">
         </div>
+        <div class="item">
+          <img class="item-image"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJakCTotE3MUEhhRyocmu451QEVrRNwz3_Tw&usqp=CAU"
+            alt="">
+          <div class="item-body">
+            <div class="item-name">Soda</div>
+            <div class="item-price">$2.00</div>
+            <div class="option">
+              <label for="sodaValue">Please enter the amount</label>
+              <input type="number" id="soda-value" name="sodaValue" min="0">
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  
+    <input type="submit" text="submit">
+  </form>
   </div>
 </body>
 

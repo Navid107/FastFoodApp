@@ -27,7 +27,7 @@
         </div>
       </nav>
       <br>
-      <
+      
       <h1>Please finalize your order</h1>
       <table class="table">
         <thead class="thead">
@@ -39,9 +39,45 @@
         </thead>
         <tbody>
           
+         
+            <tr>
+              <th>Burger</th>
+         <th><%= burgers %></th>
+        </tr>
+         <tr>
+           <th>Fries</th>
+         <th><%= fries %></th>
+        </tr>
+         <tr>
+           <th>Soda</th>
+         <th><%= soda %></th>
+        </tr>
+          
         </tbody>
       </table>
       <input type="submit" name="payment" value="Place Your Order!" class="payment" data-disable-with="payment">
-    
+    <br>
+    <br>
+    <br>
+    <h2>How was your experience with our app?</h2>
+<form
+  id="add-review-form"
+  method="POST"
+  action="/index/<%= user._id %>">
+  <label>Review:</label>
+  <textarea name="content"></textarea>
+  <br>
+  <label>Rating:</label>
+  <select name="rating">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5" selected>5</option>
+  </select>
+  <br>
+  <input type="submit" value="Add Review" />
+</form>
+
 </body>
 </html>
