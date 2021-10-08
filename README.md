@@ -42,4 +42,7 @@ To order food you must log in with your Gmail then you be able to order.
 
 ```git commit -m "setup up oauth and User Model"```
 
+![Screen Shot 2021-10-08 at 9 01 44 AM](https://user-images.githubusercontent.com/90425833/136588617-3328f343-8061-41dc-9d8e-7539bf220437.png)
 
+![Screen Shot 2021-10-08 at 9 02 20 AM](https://user-images.githubusercontent.com/90425833/136588634-970ceccb-51b0-4f83-96e3-2d07b97747bd.png)
+![Screen Shot 2021-10-08 at 9 03 16 AM](https://user-images.githubusercontent.com/90425833/136588641-2f5a9308-f7fa-4f77-affe-f6e5cf74f18e.png)
