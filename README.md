@@ -1,7 +1,16 @@
-# passport-boilerplate
+# FastOrderFood
+This app designed for small sports comunities or small events where poeple stay in line to get food.
+This app is super semple and easy to use.
+it built on Express(Mongoose) and it based on cloud server.
 
+# How to use the app
+To order food you must log in with your Gmail then you be able to order.
+1. Log in
+2. Select from the Menu
+3. Review your order
+4. Pay and reciept
+5. Give a review 
 
-This is your passport boilerplate.
 
 ## Setup 
 
@@ -32,3 +41,5 @@ This is your passport boilerplate.
 #### Make a commit 
 
 ```git commit -m "setup up oauth and User Model"```
+
+
