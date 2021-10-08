@@ -7,10 +7,13 @@ const reviewSchema = new mongoose.Schema({
 })
 
 const orderSchema = new mongoose.Schema({
-  burgerValue: Number,
-  friesValue: Number,
-  sodaValue: Number,
+  burgerValue: {type: Number, default: 0, required: true },
+  friesValue: {type: Number, default: 0, required: true },
+  sodaValue: {type: Number, default: 0, required: true },
+  price: Number,
   user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+  finalOrder: Boolean,
   reviews: [reviewSchema]
 })
+
 module.exports = mongoose.model('Order', orderSchema);

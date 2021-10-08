@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="stylesheets/style.css" />
+  <title>Review</title>
+</head>
+
+<body>
+  <br>
+  <br>
+  <br>
+  <div id="confirm">
+    <h3>Thank you for choosing us!</h3>
+  </div>
+  <h1>Your Receipts</h1>
+  <p>===============================</p>
+  <div class="receipts">
+    <ul>
+      <li> Total Burger: <%= foods[0].burgers %>
+      </li>
+      <br>
+      <li>Total Fries: <%=foods[0].fries %>
+      </li>
+      <br>
+      <li>Total Soda: <%=foods[0].soda%>
+      </li>
+      <br>
+      <li>Total Price: <%= foods.price %>
+      </li>
+    </ul>
+  </div>
+  <p>===============================</p>
+  <br>
+  <br>
+  <form id="add-review-form" method="POST" action="/index/<%= user._id %>">
+    <label>Please give us a Review:</label><br>
+    <textarea name="content"></textarea>
+    <br>
+    <label>Rating:</label>
+    <select name="rating">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5" selected>5</option>
+    </select>
+    <br>
+    <input type="submit" value="Add Review" />
+  </form>
+
+
+</body>
+
+</html>

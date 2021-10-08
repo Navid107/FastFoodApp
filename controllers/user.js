@@ -1,31 +1,53 @@
 const User = require('../models/user');
 const Food = require('../models/food');
-const { Forbidden } = require('http-errors');
+const { Forbidden, UnavailableForLegalReasons } = require('http-errors');
+
 
 module.exports = {
   index,
   review,
-  shop,
+  menu,
   payment,
-  removeItem,
-  createOrder
-  
+  createOrder,
+  placeOrder,
+  showReview
+
 };
-function createOrder(req, res){
-  console.log(req.body)
-  req.body.user = req.user._id;
+function showReview(req, res){
+  Food.find({user: req.user._id}, function(err, foods){
+    res.render('review', {foods})
+  })
+}
+function placeOrder(req,res){
+  console.log('new conslo', req.body)
+  Food.deleteMany({user: req.user._id, finalOrder: false}, function(err, deletedfood){
+    console.log('deleted food', deletedfood)
+
+  req.body.finalOrder = true;
+  req.body.user = req.user._id
+  req.body.price = (req.body.burgers * 12 )+ (req.body.fries * 6 )+ (req.body.soda *2 );
+  console.log('final Price', req.body.price)
   let newOrder = new Food(req.body)
-  console.log(newOrder, "new Order")
+  
+  newOrder.save(function(e){
+    console.log('new order', newOrder)
+    res.redirect('/review')
+  })
+})
+}
+
+function createOrder(req, res){
+  req.body.burgerValue = req.body.burgerValue ? req.body.burgerValue : 0;
+  req.body.friesValue = req.body.friesValue ? req.body.friesValue : 0;
+  req.body.sodaValue = req.body.sodaValue ? req.body.sodaValue : 0;
+  req.body.user = req.user._id;
+  req.body.finalOrder = false;
+  let newOrder = new Food(req.body)
   newOrder.save(function (e){
     res.redirect('/payment')
   })
 }
 
-function removeItem(req, res){
-  res.render('payment',{
-
-  })
-}
 function payment(req, res){
   Food.find({user: req.user._id}, function(err, orders){
     console.log(orders, "This is the orders");
@@ -39,8 +61,9 @@ function payment(req, res){
       return a;
     },0)
     let soda = orders.reduce(function(a,e){
+      
       a += e.sodaValue;
-      console.log(a, "this is soda")
+      
       return a;
     },0)
   res.render('payment',{
@@ -49,18 +72,26 @@ function payment(req, res){
 })
 }
 
-function shop(req, res){
-  res.render('shop',{
+function menu(req, res){
+  res.render('menu',{
 
   })
 }
 function review(req, res){
-  req.user.facts.push(req.body);
-   // req.user is a mongoose document
-   // where did we assign the mongoose document to req.user
-  req.user.save(function(err){
-    res.redirect('/index')
-  })
+	console.log(req.body)
+
+	Food.findById(req.params.id, function(err, userID){ 
+		if(err){
+			console.log(err)
+			res.send(err)
+		}
+		console.log(userID)
+		userID.reviews.push(req.body); // <- our review is req.body	
+    console.log(userID,"revieskkkkkkkkkkkkkkkkkkkkkkk")
+		userID.save(function(err){		
+				res.redirect(`/index/${req.params.id}`); 	
+		});	
+	});
 }
 
 function index(req, res, next) {
