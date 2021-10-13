@@ -11,7 +11,6 @@ To order food you must log in with your Gmail then you be able to order.
 4. Pay and reciept
 5. Give a review 
 
-
 ## Setup 
 
 1. Clone the repo

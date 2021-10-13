@@ -1,6 +1,7 @@
 const User = require('../models/user');
 const Food = require('../models/food');
-const { Forbidden, UnavailableForLegalReasons } = require('http-errors');
+
+
 
 
 module.exports = {
@@ -10,9 +11,22 @@ module.exports = {
   payment,
   createOrder,
   placeOrder,
-  showReview
+  showReview,
+  deleteOrder
 
 };
+function deleteOrder(req, res){
+  Food.deleteOne({_id: req.params.id}, function(er, deleteorder){
+    Food.deleteMany({user: req.user._id, finalOrder: false}, function(err, deletedfood){
+    let newOrder = new Food(req.body)
+    newOrder.save(function(e){
+      console.log('new order', newOrder)
+    })
+  })
+    res.redirect('/shop')
+  }
+    )
+}
 function showReview(req, res){
   Food.find({user: req.user._id}, function(err, foods){
     res.render('review', {foods})
@@ -79,17 +93,16 @@ function menu(req, res){
 }
 function review(req, res){
 	console.log(req.body)
-
-	Food.findById(req.params.id, function(err, userID){ 
+	Food.findById(req.params.id, function(err, userReview){ 
 		if(err){
 			console.log(err)
 			res.send(err)
 		}
-		console.log(userID)
-		userID.reviews.push(req.body); // <- our review is req.body	
-    console.log(userID,"revieskkkkkkkkkkkkkkkkkkkkkkk")
-		userID.save(function(err){		
-				res.redirect(`/index/${req.params.id}`); 	
+		console.log(userReview)
+		userReview.review.push(req.body); 
+    console.log(userReview,"revieskkkkkkkkkkkkkkkkkkkkkkk")
+		userReview.save(function(err){		
+				res.redirect(`/index${req.params.id}`); 	
 		});	
 	});
 }
@@ -97,15 +110,11 @@ function review(req, res){
 function index(req, res, next) {
   console.log(req.query)
   console.log(req.user)
-  // Make the query object to use with Student.find based up
-  // the user has submitted the search form or now
   let modelQuery = req.query.name ? {name: new RegExp(req.query.name, 'i')} : {};
-  // Default to sorting by name
   let sortKey = req.query.sort || 'name';
   User.find(modelQuery)
   .sort(sortKey).exec(function(err, users) {
     if (err) return next(err);
-    // Passing search values, name & sortKey, for use in the EJS
     res.render('index', {
       users,
       user: req.user,

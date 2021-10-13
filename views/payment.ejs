@@ -35,7 +35,7 @@
     <thead class="thead">
       <tr>
         <th scope="item">Item</th>
-        <th scope="item">Quantity</th>
+        <th scope="item">Quantity</th>  
       </tr>
     </thead>
     <tbody>
@@ -52,10 +52,14 @@
           <th>Soda</th>
           <th><input type="number" name="soda" value="<%= soda %>" min="0" class="number"></th>
         </tr>
-    </tbody>
-  </table>
-  <input type="submit" name="payment" value="Place Your Order!" class="payment">
+    
+    <th scope="item "><input type="submit" name="payment" value="Place Your Order!" class="payment"></th>
   </form>
+  <form action="/payment/<%= user.id %>?_method=DELETE" name="deleteOrder" method="POST">
+   <th scope="item"> <input type="submit" value="DELETE ORDER" class="deleteBtn"></th>
+  </form>
+</tbody>
+</table>
 </body>
 
 </html>
