@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "build": "node build"
   },
   "dependencies": {
     "cookie-parser": "^1.4.4",
@@ -13,11 +14,24 @@
     "express": "^4.18.2",
     "express-session": "^1.17.0",
     "http-errors": "~1.6.2",
+    "install": "^0.13.0",
     "method-override": "^3.0.0",
     "mongoose": "^5.7.12",
     "morgan": "~1.9.0",
     "passport": "^0.6.0",
     "passport-google-oauth": "^2.0.0",
     "passport-google-oauth20": "^1.0.0"
-  }
+  },
+  "description": "This app designed for small sports comunities or small events where poeple stay in line to get food. This app is super semple and easy to use. This app built on Express(Mongoose), CSS, JS and HTML and it based on cloud server.",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Navid107/SecondProject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Navid107/SecondProject/issues"
+  },
+  "homepage": "https://github.com/Navid107/SecondProject#readme"
 }
