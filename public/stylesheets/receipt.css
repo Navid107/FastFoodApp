@@ -1,0 +1,170 @@
+body{
+  background: #cdcfd4;
+}
+
+.header {
+    margin-top: 50px;
+    font-size: 40px;
+    text-align: center;
+    font-family: Impact, Haettenschweiler,
+     "Arial Narrow Bold", sans-serif;
+  }
+  .enjoy{
+    font-size: 20px;  
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+.receipt_container{
+    margin-top: 40px;
+ 
+}
+nav {
+  position: relative;
+  margin: 80px auto 0;
+  width: auto;
+  height: 50px;
+  background: #34495e;
+  border-radius: 8px;
+  font-size: 0;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+  font-size: 15px;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  line-height: 50px;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  text-align: center;
+}
+nav .animation {
+  position: absolute;
+  height: 100%;
+  /* height: 5px; */
+  top: 0;
+  /* bottom: 0; */
+  z-index: 0;
+  background: #8a0b64;
+  border-radius: 8px;
+  transition: all 0.5s ease 0s;
+}
+nav a:nth-child(1) {
+  width: 100px;
+}
+nav .start-home,
+a:nth-child(1):hover ~ .animation {
+  width: 100px;
+  left: 0;
+}
+nav a:nth-child(2) {
+  width: 110px;
+}
+nav a:nth-child(2):hover ~ .animation {
+  width: 110px;
+  left: 100px;
+}
+nav a:nth-child(3) {
+  width: 100px;
+}
+nav a:nth-child(3):hover ~ .animation {
+  width: 100px;
+  left: 210px;
+}
+nav a:nth-child(4) {
+  width: 160px;
+}
+nav a:nth-child(4):hover ~ .animation {
+  width: 160px;
+  left: 310px;
+}
+nav a:nth-child(5) {
+  width: 120px;
+}
+nav a:nth-child(5):hover ~ .animation {
+  width: 120px;
+  left: 470px;
+}
+#invoice-POS{
+    box-shadow: 0 0 1in -0.25in rgba(0, 0, 0, 0.5);
+    padding:2mm;
+    margin: 0 auto;
+    width:40%;
+    background: #ffffff;
+    text-align: center;
+    border-radius: 10px;
+   
+}
+    
+  ::selection {background: #f31544; color: #FFF;}
+  ::moz-selection {background: #f31544; color: #FFF;}
+  h1{
+    font-size: 1.5em;
+    color: #222;
+  }
+  h2{font-size: .9em;}
+  h3{
+    font-size: 1.2em;
+    font-weight: 300;
+    line-height: 2em;
+  }
+  p{
+    font-size: .9em;
+    color: #666;
+    line-height: 1.2em;
+  }
+   
+  #top, #mid,#bot{ /* Targets all id with 'col-' */
+    border-bottom: 1px solid #EEE;
+  }
+  
+  #top{min-height: 100px;}
+  #mid{min-height: 80px;} 
+  #bot{ min-height: 50px;}
+  
+  #top .logo{
+      height: 100px;
+      width: 100px;
+      background: url(https://www.citypng.com/public/uploads/preview/black-burger-logo-hamburger-fast-food-11653330621tcuvpgsupo.png) no-repeat;
+      background-size: 100px 100px;
+  }
+  .clientlogo{
+    float: left;
+      height: 60px;
+      width: 60px;
+      background: url(http://michaeltruong.ca/images/client.jpg) no-repeat;
+      background-size: 60px 60px;
+    border-radius: 50px;
+  }
+  .info{
+    display: block;
+    
+    margin-left: 0;
+  }
+  .title{
+    float: right;
+  }
+  .title p{text-align: right;} 
+  table{
+    width: 100%;
+    border-collapse: collapse;
+  }
+  td{
+    padding: 5px 0 5px 15px;
+    border: 1px solid #EEE
+  }
+  .tabletitle{
+    padding: 5px;
+    font-size: .7em;
+    background: #EEE;
+  }
+  .service{border-bottom: 1px solid #EEE;}
+  .item{width: 24mm;}
+  .itemtext{font-size: .7em;}
+  
+  #legalcopy{
+    margin-top: 5mm;
+  }
+  

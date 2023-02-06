@@ -1,46 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
-    <link rel="stylesheet" href="stylesheets/style.css"/>
-  
-    <title>Project 2</title>
-</head>
-<body>
-  <br>
-  <br>
-  <br>
-  <div id="header">
-  <h1>Welcome to Dutch Burgers</h1>
-</div>
-  <div class="logo">   
-</div>
-          <nav>
-            <div class="navbar" id="nav">
-              <a href="/index">HOME</a>
-              <a href="/shop">Menu</a>
-              <a href="/payment">Cart</a>
-              <% if (user) { %>
-                <a href="/logout">Log Out</a>
-                <% } else { %>
-                  <a href="/auth/google"> Login</a>
-                  <% } %>
-              <div class="animation start-home"></div>
-            </div>
-          </nav>
-          <div id="body-main">
-           <h2>Thank you for joing us!</h2>
-           <h2>We are small kitchen and ready rto recieve your orders.</h2>
-           <h2>We would be happy to serve you :)</h2>
-          </div>
-           <br>
-           <br>
-           
-          <div class="review">
-           
-          </div>
-</body>
+    <link rel="stylesheet" href="stylesheets/style.css" />
+    <title>GetBurger</title>
+  </head>
+  <body>
+    <div id="header">
+      <h1>Welcome to GetBurger</h1>
+    </div>
+    <div class="logo"></div>
+    <nav>
+      <div class="navbar" id="nav">
+        <a href="/index">HOME</a>
+        <a href="/shop">Menu</a>
+        <a href="/payment">Cart</a>
+        <% if (user) { %>
+        <a href="/logout">Log Out</a>
+        <% } else { %>
+        <a href="/auth/google"> Login</a>
+        <% } %>
+        <div class="animation start-home"></div>
+      </div>
+    </nav>
+    <div id="body-main">
+      <h2>Thank you for joining us!</h2>
+      <h2>We are small kitchen and ready to receive your orders.</h2>
+      <h2>We would be happy to serve you.
+       <h2>Please Enter to <a href="/shop">Menu</a>.</h2> 
+      </h2>
+    </div>
+  </body>
 </html>

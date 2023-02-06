@@ -1,13 +1,12 @@
 var router = require('express').Router();
-const { route } = require('.');
 var userCtrl = require('../controllers/user');
 
 
 router.get('/index', userCtrl.index);
 router.get('/shop', userCtrl.menu);
 router.get('/payment',isLoggedIn, userCtrl.payment);
-router.get('/review', isLoggedIn, userCtrl.showReview);
-router.post('/index/:id/review',isLoggedIn, userCtrl.review);
+router.get('/review', isLoggedIn, userCtrl.showReceipts);
+router.post('/createReview',isLoggedIn, userCtrl.createReview);
 router.post('/createOrder',isLoggedIn, userCtrl.createOrder);
 router.post('/payment' , isLoggedIn, userCtrl.placeOrder)
 router.delete('/payment/:id', isLoggedIn, userCtrl.deleteOrder)

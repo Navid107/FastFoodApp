@@ -1,88 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+    <link rel="stylesheet" href="stylesheets/style.css" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
-  <link rel="stylesheet" href="stylesheets/style.css" />
+    <title>GetBurger</title>
+    <div id="header">
+      <h1>Welcome to GetBurger</h1>
+    </div>
+  </head>
 
-  <title>Project 2</title>
-</head>
-
-<body>
-  <br>
-  <br>
-  <br>
-  <div id="header">
-    <h1>Welcome to Dutch Burgers</h1>
-  </div>
-
-  <nav>
-    <div class="navbar" id="nav">
-      <a href="/index">HOME</a>
-      <a href="/shop">Menu</a>
-      <a href="/payment">Cart</a>
-      <% if (user) { %>
+  <body>
+    <nav>
+      <div class="navbar" id="nav">
+        <a href="/index">HOME</a>
+        <a href="/shop">Menu</a>
+        <a href="/payment">Cart</a>
+        <% if (user) { %>
         <a href="/logout">Log Out</a>
         <% } else { %>
-          <a href="/auth/google"> Login</a>
-          <% } %>
-            <div class="animation start-home"></div>
-    </div>
-  </nav>
-  <br>
-  <form action="/createOrder" method="POST">
-    <div class="container">
-      <div class="menu">
-        <div class="item">
-          <img class="item-image"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBKKB9oMfqOovzgqR0B7ws7aOiJtvhpHOqDw&usqp=CAU"
-            alt="">
-          <div class="item-body">
-            <div class="item-name">Burger</div>
-            <div class="item-price">$12.00</div>
-            <div class="option">
-              
-              <input type="number" id="burger-value" name="burgerValue" min="0" placeholder="Enter the amount">
-
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img class="item-image"
-            src="https://www.dinneratthezoo.com/wp-content/uploads/2019/12/homemade-french-fries-5.jpg" alt="">
-          <div class="item-body">
-            <div class="item-name">Fries</div>
-            <div class="item-price">$6.00</div>
-            <div class="option">
-              
-              <input type="number" id="fries-value" name="friesValue" min="0" placeholder="Enter the amount">
-            </div>
-
-          </div>
-        </div>
-        <div class="item">
-          <img class="item-image"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJakCTotE3MUEhhRyocmu451QEVrRNwz3_Tw&usqp=CAU"
-            alt="">
-          <div class="item-body">
-            <div class="item-name">Soda</div>
-            <div class="item-price">$2.00</div>
-            <div class="option">
-              <input type="number" id="soda-value" name="sodaValue" min="0" placeholder="Enter the amount">
-            </div>
-            
-          </div>
-          
-        </div>
-        <input type="submit" text="submit" id="input" value="Order!">
+        <a href="/auth/google"> Login</a>
+        <% } %>
+        <div class="animation start-home"></div>
       </div>
-      
-    </div>
-   
-  </form>
-</body>
-
+    </nav>
+    <form action="/createOrder" method="POST">
+      <div class="container">
+        <div class="menu">
+          <div class="item">
+            <img
+              class="item-image"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBKKB9oMfqOovzgqR0B7ws7aOiJtvhpHOqDw&usqp=CAU"
+              alt=""
+            />
+            <div class="item-body">
+              <div class="item-name">Burger</div>
+              <div class="item-price">$12.00</div>
+              <div class="option">
+                <input
+                  type="number"
+                  id="burger-value"
+                  name="burgerValue"
+                  min="0"
+                  placeholder="Enter the amount"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <img
+              class="item-image"
+              src="https://www.dinneratthezoo.com/wp-content/uploads/2019/12/homemade-french-fries-5.jpg"
+              alt=""
+            />
+            <div class="item-body">
+              <div class="item-name">Fries</div>
+              <div class="item-price">$6.00</div>
+              <div class="option">
+                <input
+                  type="number"
+                  id="fries-value"
+                  name="friesValue"
+                  min="0"
+                  placeholder="Enter the amount"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <img
+              class="item-image"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJakCTotE3MUEhhRyocmu451QEVrRNwz3_Tw&usqp=CAU"
+              alt=""
+            />
+            <div class="item-body">
+              <div class="item-name">Soda</div>
+              <div class="item-price">$2.00</div>
+              <div class="option">
+                <input
+                  type="number"
+                  id="soda-value"
+                  name="sodaValue"
+                  min="0"
+                  placeholder="Enter the amount"
+                />
+              </div>
+            </div>
+          </div>
+          <input type="submit" text="submit" id="input" value="Order!" />
+        </div>
+      </div>
+    </form>
+  </body>
 </html>
