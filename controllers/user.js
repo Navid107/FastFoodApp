@@ -153,7 +153,7 @@ function index(req, res, next) {
     .sort(sortKey)
     .exec(function (err, users) {
       if (err) return next(err);
-      res.render("index", {
+      res.render("/", {
         users,
         user: req.user,
         name: req.query.name,
